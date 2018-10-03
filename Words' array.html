@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Modify or remove all items marked xxx -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Words' array</title>
+
+<style>
+    #out { /* CSS code used in out */
+        font-size: 20px;
+        background: Pink;
+        color: Black;
+        text-align: center;
+        padding: 10px;
+    }
+#title {
+
+    font-size: 30px; 
+}
+
+</style>
+
+<script>
+"use strict";
+// JavaScript code used in button
+
+function addToArray(){
+    words.push(inp.value);
+}
+
+function clearContents(element) {
+  element.value = '';
+}
+function PrintArray() {
+ console.log("Words = [ "+ words.join(", ")+" ] "+words.length);
+}
+</script>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+
+
+<textarea id=inp rows=3 cols=32 >
+</textarea >
+<br>
+<br>
+<button onClick= "clearContents(inp)"> Clear text area </button>
+<button onClick= "addToArray()"> Add to array </button>
+<button onClick= "PrintArray()"> Print Array </button>
+<p id=out></p>
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+
+<hr />
+<p>Ref: <a href="https://www.w3schools.com/js/" 
+   target="ExternalDocument">JS Tutorial</a>
+</p>
+
+<script>
+    //global variable id is the HTML element with id 
+    //const title = document.getElementById("title");
+    title.innerText = document.title;
+    sample.innerText = "Adding to array: \n"+ addToArray.toString()+"\n Printing array: \n "+PrintArray.toString();
+    out.innerHTML = "All items modified :)";
+    //var count = 0; 
+    var words=[];
+</script>
+
+</body>
+</html>
