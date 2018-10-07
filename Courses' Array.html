@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title> Add Course </title>
+</head>
+
+<script>
+"use strict";
+function AddToArray() {
+
+	let name= nametxt.value; let mid =  Number( midtxt.value); let fin = Number( fintxt.value);
+	let course = {Name:name, Midterm:mid ,Final:fin};
+	//course.Name = name;
+	//course.Midterm = mid;
+	//course.Final = fin;
+	a.push(course);
+
+}
+function PrintArray() {
+arrayPrintArea.innerText="";
+	for (let i = 0  ; i < a.length ; i++){
+	arrayPrintArea.innerText += a[i].Name+" \t\t"+ a[i].Midterm +"\t\t "+a[i].Final+"\n";  
+	}
+}
+ function average(){
+ averageArea.innerText="";
+ let avg;
+ for (let i = 0  ; i < a.length ; i++){
+ avg = (a[i].Midterm + a[i].Final)/2;
+	averageArea.innerText += a[i].Name+" \t\t"+ avg+"\n";  
+	}
+ }
+
+ function FindMax(){
+ 
+  maxArea.innerText="";
+ let maxAvg= (a[0].Midterm + a[0].Final)/ 2; let avg; let name= a[0].Name;
+	 for (let i = 0  ; i < a.length ; i++){
+	 avg = (a[i].Midterm + a[i].Final)/2;
+		 if (maxAvg<avg){
+		 maxAvg = avg;
+		 name = a[i].Name;
+		 }
+	}
+	maxArea.innerText = name +"\t\t"+maxAvg;  
+ }
+ 
+ 
+
+
+
+</script>
+
+<body>
+<h2 id=title></h2>
+
+<p>
+Name =    <input type=text id=nametxt   style="width:140px ; margin:5px ">  <br>
+Midterm =<input type=text   id=midtxt  style="width:130px ; margin:5px">   <br>
+Final =   <input type=text   id=fintxt  style="width:130px ; margin:5px ; margin-left:23px">  <br>
+</p>
+
+<p>
+	<input type=button value="Add"  onClick="AddToArray()">
+	<input type=button value="Print"  onClick="PrintArray()">
+	<input type=button value="Avg"  onClick="average()">
+	<input type=button value="Max"   onClick="FindMax()">
+</p>
+
+<hr />
+<pre style="font-size: 20px ; font-weight:bold"   > Name     Midterm     Final</pre>
+<pre id= arrayPrintArea > </pre>
+
+<hr />
+<pre style="font-size: 20px ; font-weight:bold"   > Name     Average</pre>
+<pre id= averageArea > </pre>
+
+<hr />
+<pre style="font-size: 20px ; font-weight:bold"   > Name     Max</pre>
+<pre id= maxArea > </pre>
+
+
+
+<script>
+    title.innerText = document.title;
+    
+	let defaultCourse = {Name:"advanced prog.", Midterm:80 ,Final:100};
+	const a = [defaultCourse];  //initially
+    
+</script>
+
+</body>
+</html>
