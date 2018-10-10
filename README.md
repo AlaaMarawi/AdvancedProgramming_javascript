@@ -2,8 +2,9 @@
 BLM305 advanced programming projects 
 
 CW#2
+<li>
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Words'%20array.html">Words' array.html </a>
-</br>
+</li>
 HW#1
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Courses'%20Array.html">Courses' Array.html </a>
 </br>
