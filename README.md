@@ -7,3 +7,6 @@ CW#2
 HW#1
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Courses'%20Array.html">Courses' Array.html </a>
 </br>
+CW#3
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW3/inspector.html">inspector.html </a>
+</br>
