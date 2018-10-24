@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="inspector.css" 
+          rel="stylesheet" media="all">
+    <script src="https://maeyler.github.io/JS/sss/inspector.js"></script>
+    <script src="Database.js"></script>
+
+    <title>Eloquent JavaScript </title>
+</head>
+
+<body>
+<p><b id=docName></b> &nbsp;
+
+</br>
+<li>
+CW#2
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Words'%20array.html">Words' array.html </a>
+</li>
+<li>
+HW#1
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Courses'%20Array.html">Courses' Array.html </a>
+</li>
+<li>
+CW#3_2
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW3/2/inspector.html">inspector.html </a>
+</li>
+<li>
+CW#3_3
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW3/3/range_sum.js">range_sum.js </a>
+</p>
+
+<script>
+"use strict";
+
+class Point{
+constructor (x,y){
+ this.x=x;
+ this.y=y;
+ }
+ toString(){
+return "("+this.x+","+this.y+")" ;
+ }
+}
+
+class Point3D extends Point {
+constructor (x,y,z){
+ super(x,y);
+ this.z=z;
+ }
+ toString(){
+return "("+this.x+","+this.y+","+this.z+")" ;
+
+ }
+}
+
+class Distance{
+constructor (km =0 ){
+ this.km=Math.round(km)
+ }
+ set miles(m=0.621371){
+this.km=  m*1.60934
+ }
+ get miles (){
+return this.km*0.621371;
+ }
+  static fromMiles(m) {
+    let d = new Distance();
+    d.miles = m;
+    return d;
+  }
+ toString(){
+return this.km+" km";
+ }
+}
+
+class CW4 extends Menu {
+  constructor() {
+    super();
+   this.course = new Course("MAT201","10:00","24.10.2018",["A102"]);
+ this.student = new Student(125122105,"Ahmet ak",3.70,["MAT201","MAT204"])
+this.point = new Point(5,9)
+this.point3d = new Point3D(7,8,9)
+this.distance = new Distance(1)
+
+  }
+
+}
+
+function init() {
+
+
+    display(new CW4());
+   // diplay(MEUN)
+}
+    docName.innerText = "Inspector "+VERSION;
+    try {
+        inspect(document.body, init); //makes the table
+        inp.value = "";
+    } catch(e) {
+        reportError(e);
+    }
+
+
+
+
+</script>
+
+<pre id=disp1></pre>
+<img id=disp2 />
+
+</body>
+</html>
