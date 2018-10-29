@@ -3,12 +3,16 @@ BLM305 advanced programming projects
 
 
 <li>
-CW#2
-<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Words'%20array.html">Words' array.html </a>
-</li>
-<li>
 HW#1
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Courses'%20Array.html">Courses' Array.html </a>
+</li>
+<li>
+HW#2
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/HW2/Database.html">Database.html </a>
+</li>
+<li>
+CW#2
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Words'%20array.html">Words' array.html </a>
 </li>
 <li>
 CW#3_2
