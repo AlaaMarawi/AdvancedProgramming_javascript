@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="Database.js"></script>
+    <title>Map & Array time comparision </title>
+
+<script>
+"use strict";
+const url = "https://maeyler.github.io/JS/data/";
+const array = [];
+let Smap = new Map();
+let arraycnt, mapcnt;
+function readData(file) {
+    console.log("readData "+file);
+    fetch(url+file)
+        .then(r => r.text(), console.log)
+        .then(addStudents, console.log);
+}
+function parseStudent(line) {
+    let b = line.split("\t");
+    let id = b[0], name = b[1], gpa = b[2];
+    let std = new Student(id, name, gpa);
+    let list = [];
+    for (let i=3; i<b.length; i++) 
+        list.push(b[i]);
+    std.courses = list
+    return std
+}
+function addStudents(txt) {
+    let msg = "\nData contains ";
+    msg += txt.length+" chars, ";
+    let a = txt.split("\n");
+    msg += a.length+" lines \n";
+    for (let s of a) {
+	let std = parseStudent(s);
+	array.push(std.id); 
+	Smap.set(std.id,std);
+    }
+    msg += array.length+" students, "
+ 	
+}
+
+let tmap=0,tarray=0;
+function randomTest() {
+	arraycnt=0;
+	mapcnt=0;
+	let r;
+
+	for (let i=0;i<10000;i++){
+	r= Math.floor(Math.random() * 100) + 116690070;
+	timing(findInMap,r);
+	timing(findInArray,r);
+	//console.log(r);
+	}
+	console.log("array counter = "+arraycnt+"   array total time = "+tarray+"\nmap counter = "+mapcnt+"  map 	total time = "+tmap);
+}
+function findInMap(r) {
+	if (Smap.has(r.toString())){
+		mapcnt++;
+	}
+}
+function findInArray(r) {
+	if(array.includes(r.toString()))
+		arraycnt++;
+}
+ 
+
+function timing(f,r) {
+	let t = performance.now()
+	let x = f(r)  
+	t = performance.now() - t
+	if (f.name=="findInMap"){
+		tmap+=t;
+	}else if (f.name=="findInArray"){
+		tarray+=t
+	}
+    	let s = f.name+": "+t.toPrecision(3)+" msec "
+
+}
+
+</script>
+</head>
+
+<body>
+<h2 id=title></h2>
+
+<button onClick='randomTest()'>Random control</button>
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+
+<script>
+    title.innerText = document.title;
+    sample.innerText = randomTest;
+    readData("Students.txt")
+</script>
+
+</body>
+</html>
+
