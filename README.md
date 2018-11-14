@@ -30,3 +30,8 @@ CW#4
 CW#5
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW5/file%20compare.html">file compare.html</a>
 </li>
+
+<li>
+CW#6
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW6/timing.html">timing.html</a>
+</li>
