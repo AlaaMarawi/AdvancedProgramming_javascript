@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MY CLOCK </title>
+
+  <style>
+  #clock {
+    font-size: 48px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+
+  .wallClock {
+    border-radius: 25%;
+    background-image: url(clock.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 110% ;
+    height: 23em;
+    position:  left 35% top 10%;
+    width: 23em; 
+    border: 4px solid red;
+     margin-left:  30px;
+      margin-top: 30px;
+
+  }
+.Hand {
+    // border-radius: 10%;
+    //background-image: url(hour-hand.png);
+     background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    // padding: 80px;
+    background-size: 100% ;
+    height: 23em;
+    position:  absolute;
+    width: 23em; 
+    //border: 1px solid black;
+    //  margin: 5%;
+  }
+
+</style>
+</head>
+
+<body>
+  <h2 id=title></h2>
+  <p id=clock></p>
+
+  <div class="wallClock">
+    <div id=hourHand class="Hand"style="background-image: url(hour-hand.png);" ></div>
+    <div id=minHand class="Hand"style="background-image: url(minute-hand.png);" ></div>
+    <div id=secHand class="Hand" style="background-image: url(secondHand.png);" ></div>
+  </div>
+
+
+  <script>
+"use strict";
+var hm, time1;  //for clock
+function twoDigits(t) {
+  if (t>9) return ""+t;
+  return "0"+t;
+}
+function setHourMin() {
+  const d = new Date();
+  hm = twoDigits(d.getHours())+":"
+  +twoDigits(d.getMinutes());
+  document.title = "Clock "+hm; 
+    //console.log(hm);
+  }
+  function count() {
+    const d = new Date();
+    let sec = twoDigits(d.getSeconds());
+    if (sec == "00") setHourMin();
+    clock.innerText = hm+":"+sec;
+    time1 = setTimeout(count, 1000);
+
+  }
+
+  function secRotate(){
+    if(secAngle>360){
+      minRotate();
+      secAngle=6;
+    }
+    t1 = { transform: ['rotateZ('+secAngle+'deg)','rotateZ('+(secAngle+6)+'deg)']}; 
+    document.getElementById("secHand").animate(t1,1000);
+    secAngle+=6;
+ 
+setTimeout(secRotate,1000);
+}
+
+function minRotate(){
+  minAngle+=6;
+  hourRotate(); 
+  if(minAngle>360){
+    minAngle=6;
+   // hourRotate(); // when every 60 min is completed
+  }
+
+//1: rotat'ten sonra yerine dönüyor
+//t2 =  { transform: ['rotateZ('+minAngle+'deg)','rotateZ('+(minAngle+6)+'deg)']};
+//document.getElementById("minHand").animate(t2,1000);
+//2:
+document.getElementById("minHand").style.transform = "rotate("+minAngle+"deg)";
+}
+
+function hourRotate(){
+  hourAngle+=0.5;
+  if(hourAngle>360){
+    hourAngle=0.5;
+  }
+  document.getElementById("hourHand").style.transform = "rotate("+hourAngle+"deg)";
+}
+
+
+
+let t1;
+let t2;
+// get current time:
+let time= new Date();
+let hour;
+if (time.getHours()>12){
+  hour=time.getHours()-12;
+}else{
+  hour=time.getHours();
+}
+let minute=time.getMinutes()
+let second=time.getSeconds()
+//set angels:
+let secAngle=second*6;
+let minAngle=minute*6;
+let hourAngle=(hour*30)+(minute/2);
+console.log("start time: "+hour+":"+minute+":"+second);
+document.getElementById("secHand").style.transform = "rotate("+secAngle+"deg)";
+document.getElementById("minHand").style.transform = "rotate("+minAngle+"deg)";
+document.getElementById("hourHand").style.transform = "rotate("+hourAngle+"deg)";
+
+ title.innerText = document.title;
+ setHourMin(); count();
+ secRotate(); // one second : 6 deg
+ //minRotate(); // try (one minute : 6 deg)
+ //hourRotate(); // one hour when rotate degree is 30
+
+</script>
+
+</body>
+</html>
