@@ -11,6 +11,10 @@ HW#2
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/HW2/Database.html">Database.html </a>
 </li>
 <li>
+HW#3
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript//HW3/My'%20Clock.html">My Clock.html </a>
+</li>
+<li>
 CW#2
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Words'%20array.html">Words' array.html </a>
 </li>
