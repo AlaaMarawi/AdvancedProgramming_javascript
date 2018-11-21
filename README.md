@@ -1,7 +1,7 @@
 # AdvancedProgramming_javascript
 BLM305 advanced programming projects 
 
-
+<link rel="manifest" href="manifest.json">
 <li>
 HW#1
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Courses'%20Array.html">Courses' Array.html </a>
