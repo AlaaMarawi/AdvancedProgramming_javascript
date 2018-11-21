@@ -1,6 +1,6 @@
 {
-  "name": "JavaScript samples",
-  "start_url": "README.md",
+  "name": "My web app",
+  "start_url": "/AdvancedProgramming_javascript/README.md",
   "display": "standalone",
   "background_color": "cyan",
   "icons": [
