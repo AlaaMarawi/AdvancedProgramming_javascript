@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title> My Table </title>
+</head>
+
+<script>
+"use strict";
+
+function makeRows(m, n) {
+    let row = "<th></th>";
+    row += "<th>"+"id"+"</th>";
+    row += "<th>"+"name"+"</th>";
+    row += "<th>"+"gpa"+"</th>";
+
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i < m; i++) {
+       row = "<th>"+i+"</th>";
+     
+          row += "<td>"+students[i].id+"</td>";
+          row += "<td>"+students[i].name+"</td>";
+          row += "<td>"+students[i].gpa+"</td>";
+    
+       text += "<tr>"+row+"</tr>";
+    }
+    const t = text.length+" chars";
+    console.log("makeRows: "+m+"x"+n+" "+t);
+    tablo.innerHTML = text; out.innerText = t; 
+}
+
+</script>
+
+<style>
+    table { border-collapse: collapse; }
+    th { color: blue; padding: 5px 5px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 5px 5px; 
+        text-align: center; 
+    }
+    td:hover .tip { visibility: visible; }
+    .tip {
+        visibility: hidden;
+        font-size: small;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+    }
+</style>
+
+<body>
+<center>
+<h2 id=title></h2>
+
+
+<table id="tablo"></table>
+
+<p id=out style="font-size:small"></p>
+
+
+</center>
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+
+<script>
+  // 2D array ile yapınca olur, burda obje arrayi olduğu için obje properties sayısına erişemediğim için sutun sayısı dinamik yapamadım
+  const students=[
+  {id: 116690070, name: "TEKİN", gpa: 1.35},
+  {id: 116690190, name: "ŞEYMA", gpa: 12.14},
+  {id: 116690249, name: "BERKAY", gpa: 2.14},
+  {id: 116690267, name: "FATMANUR", gpa: 2.99},
+  {id: 116690318, name: "YAĞMUR", gpa: 1.7}]
+  console.log(students[0].length)
+
+    title.innerText = document.title;
+    sample.innerText = makeRows.toString();
+    makeRows(students.length, 3);
+</script>
+
+</body>
+</html> 
