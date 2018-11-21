@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Örnekleri </title>
+    <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('https://alaamarawi.github.io/AdvancedProgramming_javascript/CW7/sw.js')
+        .then((reg) => { console.log('SW Registered', reg) })
+        .catch(console.log)
+    }
+  </script>
+  <style>
+    h3 { padding: 12px 0 0 20px; }
+    p  { padding: 0 0 0 20px; }
+    li { padding: 3px; }
+  </style>
+</head>
+
+<body>     
+
+<h3>MY first app </h3>
+
+<p>
+<a href="https://alaamarawi.github.io/AdvancedProgramming_javascript/HW3/My%20Clock.html">HW3</a>
+<br />
+</p>
+  </body>
+</html>
