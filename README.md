@@ -1,11 +1,9 @@
 # AdvancedProgramming_javascript
 BLM305 advanced programming projects 
-<li>
-<link rel="manifest" href="manifest.json">
-</li>
+
 <li>
 HW#1
-<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Courses'%20Array.html">Courses' Array.html </a>
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/HW1/Courses'%20Array.html">Courses' Array.html </a>
 </li>
 <li>
 HW#2
@@ -17,7 +15,7 @@ HW#3
 </li>
 <li>
 CW#2
-<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Words'%20array.html">Words' array.html </a>
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW2/Words'%20array.html">Words' array.html </a>
 </li>
 <li>
 CW#3_2
@@ -35,8 +33,15 @@ CW#4
 CW#5
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW5/file%20compare.html">file compare.html</a>
 </li>
-
 <li>
 CW#6
 <a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW6/timing.html">timing.html</a>
+</li>
+<li>
+CW#7 a
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW7/myTable.html">myTable.html</a>
+</li>
+<li>
+CW#7 b
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/CW7/myApp.html">myApp.html</a>
 </li>

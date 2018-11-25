@@ -1,11 +1,11 @@
 {
-  "name": "My web app",
+  "name": "Alaa's App",
   "start_url": "/AdvancedProgramming_javascript/CW7/myApp.html",
   "display": "standalone",
-  "background_color": "cyan",
+  "background_color": "plum",
   "icons": [
     {
-      "src": "JS.png",
+      "src": "ninja.png",
       "sizes": "192x192",
       "type": "image/png"
     }
