@@ -1,5 +1,5 @@
 
-const CACHE ='AdvancedProgramming_javascript'
+const CACHE ='JS'
 function installCB(e) {
   console.log('install oldu', e.request);
 }
@@ -15,7 +15,7 @@ function save(req, resp) {
 }
 function fetchCB(e) { //fetch first
   let req = e.request
-  console.log('AdvancedProgramming_javascript', req.url);
+  console.log('JS', req.url);
   e.respondWith(
     fetch(req).then(r2 => save(req, r2))
     .catch(() => { return caches.match(req).then(r1 => r1) })
