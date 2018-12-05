@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SVG and Canvas </title>
+
+  <style>
+    svg{
+        background: purple;
+        font: 10px arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Using SVG</h2>
+<svg id='svg' width='500' height='400'>
+  <circle cx='50' cy='50' r='40'
+  style='fill:pink;stroke:blue;stroke-width:4' />
+  <text x='35' y='55' fill='black'>Circle</text>
+  <rect x='110' y='10' width='100' height='80'
+  style='fill:pink;stroke:red;stroke-width:5' />
+  <text x='145' y='55' fill='blue'>Rect</text>
+</svg>
+<p>SVG elements are controllable and scalable</p>
+
+
+
+
+<pre id=sample></pre>
+
+<hr/>
+<p>
+<h2>Select Shape</h2>
+<select id ="selector" >
+  <option value="circle">circle</option>
+  <option value="rect">rectangle</option>
+
+</select>
+<hr/>
+<h2>Color Change</h2>
+change strok color :
+  <input id="cpiker" type="color" name="favcolor" value="#ff0000">
+<button onClick="select_color()"> select  </button>
+<br><br>
+change fill color :
+  <input id="cpiker1" type="color" name="favcolor" value="#ff0000">
+<button onClick="select_color1()"> select  </button>
+
+<hr/>
+<h2> Koordinant Change</h2>
+  
+<button onClick="go_left()"> go left  </button>
+<button onClick="go_right()"> go right  </button>
+<button onClick="go_up()"> go up  </button>
+<button onClick="go_down()"> go down  </button>
+<button onClick="zoomIn()"> zoom in </button>
+<button onClick="zoomOut()"> zoom out  </button>
+<hr/>
+<h2> stroke Change</h2>
+<button onClick="addstrok()"> strok ++ </button>
+<button onClick="minstrok()"> strok --  </button>
+</p>
+
+
+<br>
+
+<p>Ref: <i>Eloquent JavaScript</i>,
+<a href="http://eloquentjavascript.net/17_canvas.html" 
+   target="ExternalDocument"> Chap 17</a>
+</p>
+
+<script>
+
+"use strict";
+
+let circle = document.querySelector("circle");
+let rect = document.querySelector("rect");
+let current;
+let colorPiker = document.getElementById("cpiker");
+let colorPiker1 = document.getElementById("cpiker1");
+var s = document.getElementById("selector");
+var selectedshape ;
+
+function select_color(){
+	current = document.querySelector(s.options[s.selectedIndex].value);
+	current.style.stroke=colorPiker.value;
+	//console.log(colorPiker.value)
+}
+function select_color1(){
+	current = document.querySelector(s.options[s.selectedIndex].value);
+	current.style.fill=colorPiker1.value;
+}
+function go_left(){
+ 	//current = document.querySelector(s.options[s.selectedIndex].value);
+	circle.cx.baseVal.value -=10;
+}
+function go_right(){
+
+	circle.cx.baseVal.value +=10;
+}
+function go_up(){
+
+	circle.cy.baseVal.value -=10;
+}
+function go_down(){
+
+	circle.cy.baseVal.value +=10;
+}function zoomIn(){
+
+	circle.r.baseVal.value +=10;
+}
+function zoomOut(){
+
+	circle.r.baseVal.value -=10;
+}
+
+function addstrok(){
+	current = document.querySelector(s.options[s.selectedIndex].value);
+	current.style.strokeWidth +=1;
+}
+function minstrok(){
+	current = document.querySelector(s.options[s.selectedIndex].value);
+	current.style.strokeWidth -=1;
+}
+   
+</script>
+
+</body>
+</html>
