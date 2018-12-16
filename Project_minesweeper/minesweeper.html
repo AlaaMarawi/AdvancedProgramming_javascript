@@ -269,12 +269,19 @@
 	    		flagCount++;
     		}
 		}
+		 // not suitable for mobile (no  right click to put flag!)
+		/*
 		if(flagCount==mines){ // controle game status
 			if(revealedTileCount==(iTiles*jTiles)-flagCount){ // if all tiles except mines are revealed:
      			console.log("you Won");
      			youWin();
      		}
  		}
+ 		*/
+			if(revealedTileCount==(iTiles*jTiles)-mines){ // if all tiles except mines are revealed:
+     			console.log("you Won");
+     			youWin();
+     		}
 	}
 	function reveal(tile){
 		revealedTileCount++;
