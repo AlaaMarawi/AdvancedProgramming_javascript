@@ -51,7 +51,6 @@ CW#9
 </li>
 <li>
 PROJECT
-
-<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/v4_toObject.html">Minesweeper</a>
+<a href= "https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/minesweeper.html"> Minesweeper</a>
 </li>
 
