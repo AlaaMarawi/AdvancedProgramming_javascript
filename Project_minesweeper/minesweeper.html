@@ -21,6 +21,8 @@
 		background-size: 100% ;
 		// background-position: center;
 		background-size: cover;
+		min-width:500px;
+		width: auto;
 	}
 	svg{
 		background: purple;
@@ -123,7 +125,7 @@
 		background-position: center;
 		background-image: url(smile.png); 
 		background-size: 80%; 
-		//margin-left: 2%;
+		margin-left: 2%;
 		margin-top: 3px;
 	}
 	#textLine{
@@ -132,7 +134,8 @@
 		//padding-bottom: 4%;
 		float: left;
 		margin-top: 20px;
-		margin-left: 30%;
+		margin-right:0%;
+		margin-left: 15%;
 	}
 
 
@@ -141,24 +144,28 @@
 
 <body style=" text-align: center;">
 	<h1>Minesweeper Game</h1>
-
+<div>
 	<button class="easy" onclick="easyLevel()"> Easy </button>
 	<button class="medium" onclick="mediumLevel()"> Medium  </button>
 	<button class="hard" onclick="hardLevel()"> Hard  </button>
 	<button class="newG" onclick="newGame()"> NEW GAME  </button>
-
-	<div style="font: 25px  arial,sans-serif;
-	font-weight:bold;clear: left;
-	margin-top: 3px;
-
-	border: 3px solid black;">
-	<div id="textLine">
-		Custom :  x   <input id="xTilestxt" type="text" name="xTiles" style="width:30px" value="9">
-		y <input id="yTilestxt" type="text" name="yTiles" style="width:30px " value="9">
-		mines <input id="minestxt" type="text" name="mines" style="width:30px " value="10">
-	</div>
-	<div id="status" class="smily"></div>
 </div>
+	<div style="font: 25px  arial,sans-serif;
+	font-weight:bold;
+	clear: left;
+	margin-top: 3px;
+	//padding-left: 40px;
+	//padding-right: 8%;
+	text-align: center;
+	border: 3px solid black;
+	width: auto;">
+		<div id="textLine">
+			Custom :  x   <input id="xTilestxt" type="text" name="xTiles" style="width:30px" value="9">
+			y <input id="yTilestxt" type="text" name="yTiles" style="width:30px " value="9">
+			mines <input id="minestxt" type="text" name="mines" style="width:30px " value="10">
+		</div>
+		<div id="status" class="smily"></div>
+	</div>
 
 </br>
 <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" oncontextmenu="return false">
@@ -206,8 +213,18 @@
 
 <p style="color:white ">My GitHub Repo: <i>Alaa Ma </i> :
 	<a style="color:pink " href="https://alaamarawi.github.io/AdvancedProgramming_javascript/CW7/myApp.html" target="ExternalDocument"> main page / app</a>,
-	<a style="color:pink " href="https://github.com/AlaaMarawi/AdvancedProgramming_javascript" target="ExternalDocument"> github</a>
+	<a style="color:pink " href="https://github.com/AlaaMarawi/AdvancedProgramming_javascript"1
+	 target="ExternalDocument"> github</a>
+	</br>
+	References
+	<i>References: </i> </br>
+		<a style="color:pink " href="https://www.w3schools.com/default.asp" target="ExternalDocument"> w3schools</a></br>
+	<a style="color:pink " href="https://stackoverflow.com/questions/1034712/creating-svg-graphics-using-javascript"
+	 target="ExternalDocument"> Stackoverflow</a>
+
 </p>
+
+
 
 <script>
 
@@ -466,6 +483,10 @@
 	//reveal(tileMap[0][0]);
 	//explode(tileMap[1][1]); // explode one tile
 	//automaticReveal(); // reveal all tiles
+	console.log(document.body.offsetWidth)
+	console.log(mysvg.width.baseVal.value)
+	document.body.style.Width=(mysvg.width.baseVal.value) + 400;
+	console.log(document.body.offsetWidth)
 
 </script>
 
