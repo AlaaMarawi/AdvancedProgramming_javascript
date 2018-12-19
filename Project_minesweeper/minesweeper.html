@@ -451,6 +451,7 @@
 		 //mysvg.setAttribute('width', iTiles*widthTile+(xTile*3));
 		 mysvg.setAttribute('height', iTiles*widthTile+2*iTiles+"px");
 		 mysvg.setAttribute('width', ((jTiles*heightTile)+(2*jTiles))+"px");
+		document.body.style.minWidth =(mysvg.width.baseVal.value) + 100+"px"; // reset body width w respect tp svg width
 		drawMyGrid(); // draw the grid and fill 2D array
 		randomMines(); // put mines randomly
 		flagCount=0;
@@ -485,8 +486,8 @@
 	//automaticReveal(); // reveal all tiles
 	console.log(document.body.offsetWidth)
 	console.log(mysvg.width.baseVal.value)
-	document.body.style.Width=(mysvg.width.baseVal.value) + 400;
-	console.log(document.body.offsetWidth)
+	//document.body.style.Width=(mysvg.width.baseVal.value) + 400;
+	//console.log(document.body.offsetWidth)
 
 </script>
 
