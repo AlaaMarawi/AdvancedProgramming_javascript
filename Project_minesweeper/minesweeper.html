@@ -272,7 +272,7 @@
   		console.log(element.xLoc+","+element.yLoc+" clicked"); //tile location x,y
   		if (evt.which==1){ //if mouse left button clicked
   			reveal(clickedTile);
-
+  			if(gameEnded)gameOver();
   		}else if (evt.which==3){ //if mouse right button clicked
 
     		if (clickedTile.hasFlag){ //if clicked tile is flaged.. 
@@ -301,14 +301,16 @@
      		}
 	}
 	function reveal(tile){
-		revealedTileCount++;
 		tile.isRevealed=true;
 		mineCount=0;
 		if (tile.isMine){
 			explode(tile);
-			gameOver();
+			//gameOver();
+			gameEnded=true;
 	    }else{
 	      seeNeighbors(tile.xLoc,tile.yLoc); // see n.s of this x,y tile
+		revealedTileCount++;
+	  	
 	  	}  
 	}
 	function putFlage(element){
@@ -319,6 +321,8 @@
 	}
 	function explode(element){
 		element.style.filter= 'url(#mine)';
+			//gameOver();
+
 	}
 	function randomMines(){
 		var ri;
@@ -388,7 +392,7 @@
   		gameEnded=true;
   	}
   	function gameOver(){
-  		gameEnded=true;
+  		//gameEnded=true;
   		document.getElementById("status").style.backgroundImage='url("dead.png")';
   		document.getElementById("status").style.backgroundSize="90%";
   		for(let i =0; i<tileMap.length;i++){
@@ -436,8 +440,8 @@
 		jTiles=document.getElementById("xTilestxt").value;
 		iTiles=document.getElementById("yTilestxt").value;
 		mines=document.getElementById("minestxt").value;
-		if(mines>iTiles*jTiles){
-			mines=iTiles*jTiles;
+		if(mines>=iTiles*jTiles){
+			mines=(iTiles*jTiles) -1;
 			document.getElementById("minestxt").value=mines;
 		}
 		startGame();
@@ -461,8 +465,8 @@
 		gameEnded=false;
 	}
 	function automaticReveal(){
-		for (var i = 0; i <9; i++) {
-  			for (var j = 0; j <9; j++) {
+		for (var i = 0; i <tileMap.length; i++) {
+  			for (var j = 0; j <tileMap[0].length; j++) {
    				reveal(tileMap[i][j]);
   			}
 		}
@@ -485,8 +489,8 @@
 	//reveal(tileMap[0][0]);
 	//explode(tileMap[1][1]); // explode one tile
 	//automaticReveal(); // reveal all tiles
-	console.log(document.body.offsetWidth)
-	console.log(mysvg.width.baseVal.value)
+	//console.log(document.body.offsetWidth)
+	//console.log(mysvg.width.baseVal.value)
 	//document.body.style.Width=(mysvg.width.baseVal.value) + 400;
 	//console.log(document.body.offsetWidth)
 
