@@ -3,7 +3,7 @@
 <html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Minesweeper Game</title>
-	<link rel="icon" sizes="250x250" href="mine1.png">
+	<link rel="icon" sizes="250x250" href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/mine1.png">
 	<style>
 	h1 {
 		text-align: center;
@@ -16,7 +16,7 @@
 		font-weight:bold;
 	}
 	body{
-		background: url("bg.jpg") no-repeat center center fixed;
+		background: url("https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/bg.jpg") no-repeat center center fixed;
 		//background-repeat: no-repeat;
 		background-size: 100% ;
 		// background-position: center;
@@ -32,7 +32,6 @@
 	.unoppened {
 		// border-radius: 10%;
 		filter: url(#unopenedSquare);
-		// background-image: url(unopenedSquare.png);
 		// background-size: contain;
 		// background-position: center;
 		background-repeat: no-repeat;
@@ -123,7 +122,7 @@
 		height: 60px;
 		background-repeat: no-repeat;
 		background-position: center;
-		background-image: url(smile.png); 
+		background-image: url(https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/smile.png); 
 		background-size: 80%; 
 		margin-left: 2%;
 		margin-top: 3px;
@@ -172,40 +171,40 @@
 
 
 	<filter id="unopenedSquare" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="unopenedSquare.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/unopenedSquare.png"/>
 	</filter>
 	<filter id="openedSquare" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="openedSquare.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/openedSquare.png"/>
 	</filter>
 	<filter id="mine" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="mine.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/mine.png"/>
 	</filter>
 	<filter id="flage" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="flag.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/flag.png"/>
 	</filter>
 	<filter id="1" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="1.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/1.png"/>
 	</filter>
 	<filter id="2" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="2.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/2.png"/>
 	</filter>
 	<filter id="3" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="3.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/3.png"/>
 	</filter>
 	<filter id="4" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="4.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/4.png"/>
 	</filter>
 	<filter id="5" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="5.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/5.png"/>
 	</filter>
 	<filter id="6" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="6.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/6.png"/>
 	</filter>
 	<filter id="7" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="7.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/7.png"/>
 	</filter>
 	<filter id="8" x="0%" y="0%" width="100%" height="100%">
-		<feImage xlink:href="8.png"/>
+		<feImage xlink:href="https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/8.png"/>
 	</filter>        
 </svg>
 
@@ -387,13 +386,13 @@
 	  	}
 	}
   	function youWin(){
-  		document.getElementById("status").style.backgroundImage='url("victory.png")';
+  		document.getElementById("status").style.backgroundImage='url("https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/victory.png")';
   		document.getElementById("status").style.backgroundSize="135%";
   		gameEnded=true;
   	}
   	function gameOver(){
   		//gameEnded=true;
-  		document.getElementById("status").style.backgroundImage='url("dead.png")';
+  		document.getElementById("status").style.backgroundImage='url("https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/dead.png")';
   		document.getElementById("status").style.backgroundSize="90%";
   		for(let i =0; i<tileMap.length;i++){
   			for (var j = 0; j < tileMap[i].length; j++) {
@@ -405,7 +404,7 @@
 
   	}
 	function resetSmiley(){
-  		document.getElementById("status").style.backgroundImage='url("smile.png")';
+  		document.getElementById("status").style.backgroundImage='url("https://alaamarawi.github.io/AdvancedProgramming_javascript/Project_minesweeper/smile.png")';
   		document.getElementById("status").style.backgroundSize="80%";
 
   	}
